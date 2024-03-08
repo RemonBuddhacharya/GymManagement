@@ -60,15 +60,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
     if (!empty($username) && !empty($password)) {
         $test = "SELECT * FROM user WHERE username='" . $username . "' AND password='" . $password . "'";
-        // echo $test;
-        
         $result = mysqli_query($conn, $test);
         if (mysqli_num_rows($result) > 0) {
-            $newURL ='../index.php';
-            header('Location: '.$newURL);
-
-        }else{
-            echo "user doesnt exist";
+            $newURL = 'dashboard.php';
+            header('Location: ' . $newURL);
+        } else {
+            echo '<p style="color:white">user doesnt exist</p>';
         }
     } else {
         echo "Blank";
@@ -76,6 +73,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     unset($_POST['username']);
     unset($_POST['password']);
 }
-echo $_POST['username'];
 mysqli_close($conn);
-?>

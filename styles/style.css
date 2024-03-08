@@ -1,20 +1,22 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
 }
 
-body::-webkit-scrollbar{
+body::-webkit-scrollbar {
     display: none;
 }
-.banner{
+
+.banner {
     width: 100dvw;
     height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.76),rgba(0,0,0,0.75)),url(background.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.76), rgba(0, 0, 0, 0.75)), url(../images/index/background.jpg);
     background-size: cover;
     background-position: center;
 }
-.navbar{
+
+.navbar {
     width: 85%;
     margin: auto;
     padding: 35px 0;
@@ -23,22 +25,26 @@ body::-webkit-scrollbar{
     justify-content: space-between;
 
 }
-.logo{
+
+.logo {
     width: 50px;
     cursor: pointer;
 }
-.navbar ul li{
+
+.navbar ul li {
     list-style: none;
     display: inline-block;
     margin: 0 20px;
     position: relative;
 }
-.navbar ul li a{
+
+.navbar ul li a {
     text-decoration: none;
-    color:#fff;
+    color: #fff;
     text-transform: uppercase;
 }
-.navbar ul li::after{
+
+.navbar ul li::after {
     content: '';
     height: 2px;
     width: 0%;
@@ -50,45 +56,50 @@ body::-webkit-scrollbar{
     display: block;
     margin: auto;
 }
-.navbar ul li:hover::after{
+
+.navbar ul li:hover::after {
     width: 100%;
 }
-.content{
+
+.content {
     width: 100%;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     text-align: center;
     color: #fff;
-}
-.content{
     font-size: 40px;
     margin-top: 0px;
 
 }
-.content p{
+
+.content p {
     margin: 20px auto;
     font-weight: 100;
     line-height: 25px;
 }
-.text-box{
+
+.text-box {
     width: 90%;
     color: #fff;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     text-align: center;
 }
-.text-box h1{
+
+.text-box h1 {
     font-size: 62px;
 }
-.text-box p{
+
+.text-box p {
     margin: 10px 0 40px;
     font-size: 14px;
     color: #fff;
 }
-.hero-btn{
+
+.hero-btn {
     display: inline-block;
     text-decoration: none;
     color: #fff;
@@ -99,14 +110,15 @@ body::-webkit-scrollbar{
     position: relative;
     cursor: pointer;
 }
-.hero-btn:hover{
+
+.hero-btn:hover {
     border: 1px solid #f44336;
     background: #f44336;
     transition: 1s;
 }
 
 /*----- about ------*/
-.about{
+.about {
     width: 80%;
     margin: auto;
     text-align: center;
@@ -114,79 +126,82 @@ body::-webkit-scrollbar{
 }
 
 
-h1{
-    font-size: 36px;
-    font-weight: 600;
-}
-p{
+p {
     height: 50px;
     color: #777;
     font-size: 14px;
     font-weight: 300;
     line-height: 50px;
-    padding:10px;
+    padding: 10px;
 }
-.row{
+
+.row {
     margin-top: 0px;
-    display: grid;
     grid-template-columns: 1fr 200px;
     gap: 50px;
+    display: flex;
     justify-content: space-between;
 }
 
-.about img{
+
+.about img {
     margin-top: auto;
     margin-bottom: 15%;
 }
 
-.about-col{
-    /* flex-basis: 31%; */
+.about-col {
     height: 500px;
-    
+
     margin: auto;
     background: #fff3f3;
     border-radius: 10px;
     padding: 20px 12px;
     box-sizing: border-box;
 }
-h3{
+
+
+h3 {
     text-align: center;
+    font-size: 25px;
     font-weight: 600;
     margin: 10px 0;
-
 }
-.about-col:hover{
-    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+
+.about-col:hover {
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
 }
 
 
 /*--------- Pricing ----------*/
-.Pricing{
+.pricing {
     width: 80%;
     margin: auto;
     text-align: center;
     padding-top: 100px;
 }
-.row-price{
+
+.row-price {
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 50px;
     height: 400px;
 }
 
-h1{
+h1 {
     font-size: 40px;
     font-weight: 600;
 }
-.row-price p{
+
+.row-price p {
     color: #777;
     height: 150px;
     font-size: 14px;
     font-weight: 300;
     line-height: 22px;
-    padding:10px;
+    padding: 10px;
 }
-.row-price .hero{
+
+.row-price .hero {
     display: inline-block;
     text-decoration: none;
     color: black;
@@ -198,18 +213,16 @@ h1{
     position: relative;
     cursor: pointer;
 }
-.row-price .hero:hover{
+
+.row-price .hero:hover {
     border: 1px solid #f44336;
     background: #f44336;
     transition: 1s;
 }
-.row{
-    margin-top: 5%;
-    display: flex;
-    justify-content: space-between;
 
-}
-.pricing-col{
+
+
+.pricing-col {
     flex-basis: 31%;
     background: #fff3f3;
     border-radius: 10px;
@@ -217,29 +230,28 @@ h1{
     padding: 20px 12px;
     box-sizing: border-box;
 }
-h3{
-    text-align: center;
-    font-size: 25px;
-    font-weight: 600;
-    margin: 10px 0;
 
-}
-h4{
+
+
+h4 {
     font-size: 25px;
     font-weight: 600;
     margin: 10px 0;
 }
-.pricing-col:hover{
-    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+
+.pricing-col:hover {
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
 }
+
 /*--------- diet plan --------*/
-.Dietplan{
+.dietplan {
     width: 80%;
     margin: auto;
     text-align: center;
     padding-top: 50px;
 }
-.diet-col{
+
+.diet-col {
     flex-basis: 32%;
     border-radius: 10px;
     margin-bottom: 30px;
@@ -247,13 +259,14 @@ h4{
     overflow: hidden;
     cursor: pointer;
 }
-.diet-col img{
+
+.diet-col img {
     width: 100%;
     display: block;
 }
 
-.layer{
-    background:transparent;
+.layer {
+    background: transparent;
     height: 100%;
     width: 100%;
     position: absolute;
@@ -261,27 +274,30 @@ h4{
     left: 0;
     transition: 0.5s;
 }
-.layer:hover{
-    background: rgba(226,0,0,0.7);
+
+.layer:hover {
+    background: rgba(226, 0, 0, 0.7);
 }
-.layer h3{
+
+.layer h3 {
     width: 100%;
     font-weight: 500;
     color: #fff;
     font-size: 26px;
     bottom: 0;
-    left:50%;
+    left: 50%;
     transform: translateX(-50%);
-    position:absolute;
+    position: absolute;
     opacity: 0;
     transition: 0.5s;
 }
-.layer:hover h3{
+
+.layer:hover h3 {
     bottom: 49%;
     opacity: 1;
 }
 
-.pop{
+.pop {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -292,15 +308,15 @@ h4{
     z-index: 999;
 }
 
-.pop img{
+.pop img {
     object-fit: contain;
 }
 
 /*----- Call to action -----*/
-.cta{
+.cta {
     margin: 100px auto;
     width: 80%;
-    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(images/banner2.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/index/banner2.jpg);
     background-position: center;
     background-size: cover;
     border-radius: 10px;
@@ -308,25 +324,24 @@ h4{
     padding: 100px 0;
 
 }
-.cta h1{
+
+.cta h1 {
     color: #fff;
     margin-bottom: 40px;
-    padding:0;
+    padding: 0;
 
 }
+
 /*-------------Footer----------*/
-.footer{
+.footer {
     display: flex;
-    height: 400px;
-    /* width: 100dvw; */
     background-color: black;
     margin-top: 50px;
-
     padding: 50px 10% 50px 10%;
     justify-content: space-between;
 }
 
-.footer .contact-column{
+.footer .contact-column {
     display: flex;
     flex-direction: column;
     width: 250px;
@@ -334,7 +349,7 @@ h4{
     padding: 10px 10px;
 }
 
-.footer .contact-column img{
+.footer .contact-column img {
     background-color: white;
     border-radius: 5px;
     margin-right: 5px;
@@ -342,17 +357,17 @@ h4{
     object-fit: scale-down;
 }
 
-.footer .contact-column li{
+.footer .contact-column li {
     display: flex;
 
     align-items: center;
-    
+
     font-size: large;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
-.footer .menu-column{
+.footer .menu-column {
     display: flex;
     flex-direction: column;
     width: 250px;
@@ -363,13 +378,13 @@ h4{
     justify-content: space-between;
 }
 
-.footer .menu-column li{
+.footer .menu-column li {
     font-size: larger;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
-.footer .feedback-column{
+.footer .feedback-column {
     display: flex;
     flex-direction: column;
     width: 45%;
@@ -379,7 +394,7 @@ h4{
     justify-content: space-between;
 }
 
-.footer .feedback-column #feedback-btn{
+.footer .feedback-column #feedback-btn {
     position: relative;
     height: 50px;
     width: 200px;
@@ -392,6 +407,6 @@ h4{
     color: white;
 }
 
-.feedback-column textarea{
+.feedback-column textarea {
     width: 100%;
 }
