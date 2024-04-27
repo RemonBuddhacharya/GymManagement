@@ -41,8 +41,7 @@ if (isset($_POST['pay_submit'])) {
     $Amount = $_POST['Amount'];
     $customer_id = $_POST['customer_id'];
     $payment_type = $_POST['payment_type'];
-    $customer_name = $_POST['customer_name'];
-    $query = "insert into Payment(Payment_id,Amount,customer_id,payment_type,customer_name)values('$Payment_id','$Amount','$customer_id','$payment_type','$customer_name')";
+    $query = "insert into Payment(Payment_id,Amount,customer_id,payment_type)values('$Payment_id','$Amount','$customer_id','$payment_type')";
     $result = mysqli_query($con, $query);
     if ($result) {
         echo "<script>alert('Payment successful.')</script>";
