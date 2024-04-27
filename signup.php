@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (isset($_SESSION['userId'])) {
+    header('Location: dashboard.php');
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,13 +12,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gym Management Signup</title>
-    <link rel="stylesheet" href="../styles/login.css" />
+    <link rel="stylesheet" href="styles/login.css" />
 </head>
 
 <body>
     <div class="container">
         <div class="center">
-            <h1>Signup</h1>
+            <h1>Sign Up</h1>
             <form action="" method="POST">
                 <div class="txt_field">
                     <input type="text" name="username" placeholder="Username" required>
@@ -30,13 +37,13 @@
 
 </html>
 <?php
-$servername = "localhost";
+$serverName = "localhost";
 $username = "root";
 $password = "";
 $database = "gym";
 
 // Create connection
-$conn = mysqli_connect($servername, $username, $password, $database);
+$conn = mysqli_connect($serverName, $username, $password, $database);
 
 // Check connection
 if (!$conn) {

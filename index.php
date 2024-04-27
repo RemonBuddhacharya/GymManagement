@@ -24,7 +24,7 @@
                     <li><a href="#dietplan">Diet Plan</a></li>
                     <li><a href="#contactUs">Contact us</a></li>
                     <div class="hero-btn">
-                        <li><a href="pages/login.php">Log In</a></li>
+                        <li><a href="login.php">Log In</a></li>
                     </div>
                 </ul>
             </div>
@@ -143,8 +143,6 @@
             <button id="feedback-btn">Send</button>
         </div>
     </div>
-
-
     <script src="scripts/pop.js"></script>
 </body>
 
