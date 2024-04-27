@@ -1,85 +1,85 @@
--- user - id - auto increment - username - password - phone number - address - email optional - full name
-DROP DATABASE IF EXISTS gym;
-CREATE DATABASE gym;
-USE gym;
--- Create Staff table
-CREATE TABLE Staff (
-    staff_id INT AUTO_INCREMENT PRIMARY KEY,
-    first_name VARCHAR(50) NOT NULL,
-    last_name VARCHAR(50) NOT NULL,
-    email VARCHAR(100) UNIQUE NOT NULL,
-    phone_number VARCHAR(20),
-    role ENUM('admin', 'manager', 'trainer', 'receptionist') NOT NULL
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+05:45";
+
+DROP DATABASE IF EXISTS gymwebsite;
+CREATE DATABASE gymwebsite;
+USE gymwebsite;
+
+CREATE TABLE `gymapp` (
+  `fname` varchar(40) NOT NULL,
+  `lname` varchar(40) NOT NULL,
+  `email` varchar(40) NOT NULL,
+  `contact` varchar(40) NOT NULL,
+  `trainer_id` varchar(60) NOT NULL
 );
--- Create Members table
-CREATE TABLE Members (
-    member_id INT AUTO_INCREMENT PRIMARY KEY,
-    first_name VARCHAR(50) NOT NULL,
-    last_name VARCHAR(50) NOT NULL,
-    email VARCHAR(100) UNIQUE NOT NULL,
-    phone_number VARCHAR(20),
-    address VARCHAR(255),
-    membership_start_date DATE NOT NULL,
-    membership_end_date DATE NOT NULL,
-    status ENUM('active', 'inactive', 'suspended') NOT NULL
+
+INSERT INTO `gymapp` (`fname`, `lname`, `email`, `contact`, `trainer_id`) VALUES
+('Raj', 'kumar', 'kumar@gmail.com', '201', '101'),
+('saurabh', 'kumar', 'kumar121@gmail.com', '202', '102'),
+('surya', 'raj', 'raj1242gmail.com', '203', '101'),
+('Raman', 'kumar', 'raman@gmail.com', '204', '103'),
+('Aadarsh', 'thakur', 'thakur@gmail.com', '205', '103'),
+('Rahul', 'kumar', 'rahul@gmail.com', '206', '102'),
+('Sanjeev', 'Verma', 'verma12@gmail.com', '207', '103');
+
+
+CREATE TABLE `logintb` (
+  `username` varchar(40) NOT NULL,
+  `password` varchar(40) NOT NULL
 );
--- Create Users table
-CREATE TABLE Users (
-    user_id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(100) UNIQUE NOT NULL,
-    password VARCHAR(255) NOT NULL,
-    role ENUM('admin', 'staff', 'member') NOT NULL,
-    member_id INT,
-    staff_id INT,
-    FOREIGN KEY (member_id) REFERENCES Members(member_id),
-    FOREIGN KEY (staff_id) REFERENCES Staff(staff_id)
+
+INSERT INTO `logintb` (`username`, `password`) VALUES
+('admin', 'pass');
+
+CREATE TABLE `Package` (
+  `Package_id` varchar(40) NOT NULL,
+  `Package_name` varchar(40) NOT NULL,
+  `Amount` int(20) NOT NULL
 );
--- Insert dummy staff data
-INSERT INTO Staff (first_name, last_name, email, phone_number, role)
-VALUES (
-        'Remon',
-        'Buddhacharya',
-        'remon@example.com',
-        '1234567890',
-        'admin'
-    );
--- Insert dummy member data
-INSERT INTO Members (
-        first_name,
-        last_name,
-        email,
-        phone_number,
-        address,
-        membership_start_date,
-        membership_end_date,
-        status
-    )
-VALUES (
-        'Rijan',
-        'Bajracharya',
-        'rijan@example.com',
-        '9876543210',
-        '123 Street, City',
-        '2024-04-07',
-        '2025-04-07',
-        'active'
-    );
--- Insert dummy user data
-INSERT INTO Users (username, password, role, member_id, staff_id)
-VALUES (
-        'remon',
-        'password',
-        'admin',
-        NULL,
-        1
-    );
--- Assuming staff_id for Remon is 1
-INSERT INTO Users (username, password, role, member_id, staff_id)
-VALUES (
-        'rijan',
-        'password',
-        'member',
-        1,
-        NULL
-    );
--- Assuming member_id for Rijan is 1
+
+
+INSERT INTO `Package` (`Package_id`, `Package_name`, `Amount`) VALUES
+('121', 'preliminary', 800),
+('122', 'Wt. gain', 1500),
+('123', 'Wt.loss', 1000);
+
+
+CREATE TABLE `Payment` (
+  `Payment_id` int(10) NOT NULL,
+  `Amount` int(20) NOT NULL,
+  `customer_id` varchar(20) NOT NULL,
+  `payment_type` varchar(20) NOT NULL
+);
+
+INSERT INTO `Payment` (`Payment_id`, `Amount`, `customer_id`, `payment_type`) VALUES
+(301, 1500, '201', 'cash'),
+(302, 800, '202', 'card'),
+(303, 1000, '203', 'cheque'),
+(304, 1500, '204', 'cash');
+
+CREATE TABLE `Trainer` (
+  `Trainer_id` int(20) NOT NULL,
+  `Name` varchar(40) NOT NULL,
+  `phone` int(100) NOT NULL
+);
+
+INSERT INTO `Trainer` (`Trainer_id`, `Name`, `phone`) VALUES
+(101, 'Rakesh', 12365489),
+(102, 'Ravi', 21365789),
+(103, 'wasim', 123564789),
+(104, 'Sameer', 12536987);
+
+ALTER TABLE `gymapp`
+  ADD PRIMARY KEY (`contact`);
+
+ALTER TABLE `Package`
+  ADD PRIMARY KEY (`Package_id`);
+
+ALTER TABLE `Payment`
+  ADD PRIMARY KEY (`Payment_id`);
+
+ALTER TABLE `Trainer`
+  ADD PRIMARY KEY (`Trainer_id`);
+COMMIT;

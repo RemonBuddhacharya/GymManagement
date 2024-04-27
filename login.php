@@ -16,10 +16,10 @@ if (isset($_SESSION['userId'])) {
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <div class="center">
             <h1>Log In</h1>
-            <form action="" method="POST">
+            <form action="admin-panel.php" method="POST">
                 <div class="txt_field">
                     <input type="text" name="username" placeholder="Username" required>
                 </div>
@@ -39,45 +39,3 @@ if (isset($_SESSION['userId'])) {
 </body>
 
 </html>
-
-<?php
-$serverName = "localhost";
-$username = "root";
-$password = "";
-$database = "gym";
-$conn = mysqli_connect($serverName, $username, $password, $database);
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    if (!empty($username) && !empty($password)) {
-        $query = "SELECT * FROM Users WHERE username='" . $username . "'";
-        $result = mysqli_query($conn, $query);
-        if (mysqli_num_rows($result) > 0) {
-            $row = mysqli_fetch_assoc($result);
-            if ($password == $row['password']) {
-                $_SESSION['userId'] = $row['id'];
-                $_SESSION['role'] = $row['role'];
-                header('Location: dashboard.php');
-                exit();
-            } else {
-                echo '
-                <script>
-                document.getElementById("error_field_login").innerHTML = "Invalid password";
-                </script>
-                ';
-            }
-        } else {
-            echo '
-            <script>
-            document.getElementById("error_field_login").innerHTML = "Invalid username";
-            </script>
-            ';
-        }
-    }
-    unset($_POST['username']);
-    unset($_POST['password']);
-}
-mysqli_close($conn);

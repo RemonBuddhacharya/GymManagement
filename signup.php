@@ -16,7 +16,7 @@ if (isset($_SESSION['userId'])) {
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <div class="center">
             <h1>Sign Up</h1>
             <form action="" method="POST">

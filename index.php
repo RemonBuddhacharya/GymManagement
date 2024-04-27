@@ -23,9 +23,7 @@
                     <li><a href="#pricing">Pricing</a></li>
                     <li><a href="#dietplan">Diet Plan</a></li>
                     <li><a href="#contactUs">Contact us</a></li>
-                    <div class="hero-btn">
-                        <li><a href="login.php">Log In</a></li>
-                    </div>
+                    <li><a href="login.php" class="hero-btn">Log In</a></li>
                 </ul>
             </div>
             <div class="text-box">
