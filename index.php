@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fit Hub</title>
+    <title>Gym Website</title>
     <link rel="icon" href="images/logo/newlogo.png">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,7 +27,7 @@
                 </ul>
             </div>
             <div class="text-box">
-                <h1>Welcome to Fit Hub</h1>
+                <h1>Welcome to Gym Website</h1>
                 <p>A complete Gym Solution</p>
                 <a href="#aboutus" class="hero-btn">Visit us to know more</a>
             </div>
@@ -37,14 +37,14 @@
     <!-------About------->
     <section class="about" id="aboutus">
         <h1>About Us</h1>
-        <p>Welcome to Fit Hub website guys. here we allow you guys how to train proper workout.</p>
+        <p>Welcome to Gym website</p>
         <div class="row">
             <div class="about">
                 <img src="images/index/about.png" height="500" alt="about">
             </div>
             <div class="about-col">
-                <h3>Intermediate</h3>
-                <p>Hello from the other sidee hi from this side bye from another side die from any side never read BCA its so hard subject never study in nepal.</p>
+                <h3>Introduction</h3>
+                <p>Welcome to the gym, your one-stop destination for fitness! With a range of equipment, classes, and supportive community vibes, you'll find everything you need to kickstart your health journey.</p>
             </div>
         </div>
     </section>
@@ -56,20 +56,20 @@
             <div class="pricing-col">
                 <h3>1 MONTH </h3>
                 <h4>Rs2500</h4>
-                <p>✔ Free Bottle<br><br>✔ Free belt<br><br>✔ Free rajwol<br><br>✔ Free desk</p>
-                <a href="" class="hero">Join Now</a>
+                <p>✔ Free Shower<br><br>✔ Free bottle<br><br>✔ 3-hrs Gym time per day</p>
+                <a href="signup.php" class="hero">Join Now</a>
             </div>
             <div class="pricing-col">
                 <h3>3 MONTH</h3>
                 <h4>Rs5000</h4>
-                <p>✔ Free Bottle<br><br>✔ Free belt<br><br>✔ Free rajwol<br><br>✔ Free desk</p>
-                <a href="" class="hero">Join Now</a>
+                <p>✔ Free Shower<br><br>✔ Free Bottle<br><br>✔ Unlimited Gym Time</p>
+                <a href="signup.php" class="hero">Join Now</a>
             </div>
             <div class="pricing-col">
                 <h3>6 MONTH</h3>
                 <h4>Rs8000</h4>
-                <p>✔ Free Bottle<br><br>✔ Free belt<br><br>✔ Free rajwol<br><br>✔ Free desk</p>
-                <a href="" class="hero">Join Now</a>
+                <p>✔ Free Shower<br><br>✔ Free Bottle<br><br>✔ Unlimited Gym Time<br><br>✔ Free Trainer</p>
+                <a href="signup.php" class="hero">Join Now</a>
             </div>
         </div>
     </section>
@@ -124,7 +124,7 @@
             <h1 style="color:white;" id="contactUs">Contact</h1><br>
             <ul>
                 <li><img src="images/icons/contact.png" alt="contact"><a href="#">+977-9823696969</a></li>
-                <li><img src="images/icons/email.png" alt="email"><a href="#">Fithub@gmail.com</a></li>
+                <li><img src="images/icons/email.png" alt="email"><a href="#">Gym@gmail.com</a></li>
             </ul>
         </div>
         <div class="menu-column">
