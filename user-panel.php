@@ -80,6 +80,7 @@ $resultTrainer = mysqli_query($connect, $queryTrainer);
                             <p><?php echo $contact; ?></p><br>
                             <label>Trainer:</label>
                             <select class="form-control" name="trainer_id">
+                                <option value="">Select Trainer</option>
                                 <?php while ($rowTrainer = mysqli_fetch_assoc($resultTrainer)) : ?>
                                     <option value="<?php echo $rowTrainer['Trainer_id']; ?>" <?php if ($rowTrainer['Trainer_id'] == $trainer_id) echo "selected"; ?>><?php echo $rowTrainer['Name']; ?></option>
                                 <?php endwhile; ?>

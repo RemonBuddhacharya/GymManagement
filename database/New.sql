@@ -71,13 +71,12 @@ VALUES (110, 'Saman', 659454),
 DROP TABLE IF EXISTS `gymapp`;
 
 CREATE TABLE IF NOT EXISTS `gymapp` (
+    `contact` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `fname` varchar(40) NOT NULL,
     `lname` varchar(40) NOT NULL,
     `email` varchar(40) NOT NULL,
-    `contact` int NOT NULL,
-    `trainer_id` int NOT NULL,
+    `trainer_id` int NULL,
     `logintb_id` int NULL,
-    PRIMARY KEY (`contact`),
     FOREIGN KEY (`trainer_id`) REFERENCES `trainer` (`Trainer_id`),
     FOREIGN KEY (`logintb_id`) REFERENCES `logintb` (`logintb_id`)
 );
