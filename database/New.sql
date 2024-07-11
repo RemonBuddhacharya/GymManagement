@@ -62,8 +62,10 @@ CREATE TABLE IF NOT EXISTS `trainer` (
 -- Dumping data for table gymwebsite.trainer: ~4 rows (approximately)
 INSERT INTO
     `trainer` (`Trainer_id`, `Name`, `phone`)
-VALUES (1001, 'Rijan', 659450);
-
+VALUES (110, 'Saman', 659454),
+    (1001, 'Rijan', 659450),
+    (101, 'Reman', 659456),
+    (103, 'Sastaw', 659457);
 
 -- Dumping structure for table gymwebsite.gymapp
 DROP TABLE IF EXISTS `gymapp`;
@@ -89,15 +91,48 @@ INSERT INTO
         `contact`,
         `trainer_id`
     )
-VALUES
-    ('ram', 'thapa', 'ramthapa@gamil.com', '103', 110),  -- Corrected trainer_id to 110 (assuming it's an existing Trainer_id)
-    ('bhabishya', 'thapa', 'bhabishyabhattnepal@gmail.com', '109', 1001),
-    ('Saswot', 'b', 'bs@gmail.com', '110', 1001),
-    ('RAM', 'RAM', '1231@GMAIL.COM', '111', 1001),
-    ('Raj', 'kumar', 'kumar@gmail.com', '201', 101),    -- Corrected trainer_id to 101 (assuming it's an existing Trainer_id)
-    ('Aadarsh', 'thakur', 'thakur@gmail.com', '205', 103);
-
-
+VALUES (
+        'ram',
+        'thapa',
+        'ramthapa@gamil.com',
+        '103',
+        110
+    ), -- Corrected trainer_id to 110 (assuming it's an existing Trainer_id)
+    (
+        'bhabishya',
+        'thapa',
+        'bhabishyabhattnepal@gmail.com',
+        '109',
+        1001
+    ),
+    (
+        'Saswot',
+        'b',
+        'bs@gmail.com',
+        '110',
+        1001
+    ),
+    (
+        'RAM',
+        'RAM',
+        '1231@GMAIL.COM',
+        '111',
+        1001
+    ),
+    (
+        'Raj',
+        'kumar',
+        'kumar@gmail.com',
+        '201',
+        101
+    ), -- Corrected trainer_id to 101 (assuming it's an existing Trainer_id)
+    (
+        'Aadarsh',
+        'thakur',
+        'thakur@gmail.com',
+        '205',
+        103
+    );
 
 -- Dumping data for table gymwebsite.logintb: ~0 rows (approximately)
 
@@ -150,46 +185,44 @@ VALUES (
         301,
         '122',
         1500,
-        '103',  -- Updated contact value for 'ram thapa'
+        '103', -- Updated contact value for 'ram thapa'
         'cash'
     ), -- Package_id '122' for Wt. gain package
     (
         302,
         '121',
         800,
-        '109',  -- Updated contact value for 'bhabishya thapa'
+        '109', -- Updated contact value for 'bhabishya thapa'
         'card'
     ), -- Package_id '121' for preliminary package
     (
         303,
         '123',
         1000,
-        '110',  -- Updated contact value for 'Saswot b'
+        '110', -- Updated contact value for 'Saswot b'
         'cheque'
     ), -- Package_id '123' for Wt.loss package
     (
         304,
         '122',
         1500,
-        '111',  -- Updated contact value for 'RAM RAM'
+        '111', -- Updated contact value for 'RAM RAM'
         'cash'
     ), -- Package_id '122' for Wt. gain package
     (
         305,
         '121',
         5000,
-        '201',  -- Updated contact value for 'Raj kumar'
+        '201', -- Updated contact value for 'Raj kumar'
         'cash'
     ), -- Package_id '121' for preliminary package
     (
         306,
         '121',
         1500,
-        '205',  -- Updated contact value for 'Aadarsh thakur'
+        '205', -- Updated contact value for 'Aadarsh thakur'
         'cash'
     );
-
-
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */
 ;

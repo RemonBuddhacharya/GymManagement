@@ -54,18 +54,25 @@ function get_member_details()
     $query = "select * from gymapp";
     $result = mysqli_query($con, $query);
     while ($row = mysqli_fetch_array($result)) {
+        $contact = $row['contact'];
         $fname = $row['fname'];
         $lname = $row['lname'];
         $email = $row['email'];
-        $contact = $row['contact'];
         $trainer_id = $row['trainer_id'];
+
+        $query_trainer = "SELECT Name FROM trainer WHERE Trainer_id = '$trainer_id'";
+        $result_trainer = mysqli_query($con, $query_trainer);
+        $row_trainer = mysqli_fetch_assoc($result_trainer);
+        $trainer_name = $row_trainer['Name'];
+
+        $trainer_name_id = $trainer_id . " - " . $trainer_name;
         echo "<tr>
-          <td>$fname</td>
+        <td>$contact</td>
+        <td>$fname</td>
         <td>$lname</td>
-            <td>$email</td>
-            <td>$contact</td>
-          <td>$trainer_id</td>
-          <td>
+        <td>$email</td>
+        <td>$trainer_name_id</td>
+        <td>
             <a class='btn btn-success mx-3 editbtn' style='text-decoration:none; color:white;'>Edit</a>
             <a href='memberdelete.php?email=$email'  class='btn btn-danger' style='text-decoration:none; color:white;'>Delete</a>
           </td>
@@ -117,12 +124,29 @@ function get_payment()
         $Amount = $row['Amount'];
         $payment_type = $row['payment_type'];
         $customer_id = $row['customer_id'];
+        $package_id = $row['package_id'];
+
+        // Fetching package_name based on package_id
+        $query_package = "SELECT Package_name FROM package WHERE Package_id = '$package_id'";
+        $result_package = mysqli_query($con, $query_package);
+        $row_package = mysqli_fetch_assoc($result_package);
+        $package_name = $row_package['Package_name'];
+
+        $query_customer = "SELECT fname, lname FROM gymapp WHERE contact = '$customer_id'";
+        $result_customer = mysqli_query($con, $query_customer);
+        if ($result_customer && mysqli_num_rows($result_customer) > 0) {
+            $row_customer = mysqli_fetch_assoc($result_customer);
+            $customer = $Payment_id . " - " . $row_customer['fname'] . " " . $row_customer['lname'];
+        } else {
+            $customer = "Customer Not Found";
+        }
 
         echo "<tr>
         <td>$Payment_id</td>
         <td>$Amount</td>
         <td>$payment_type</td>
-        <td>$customer_id</td>
-            </tr>";
+        <td>$customer</td>
+        <td>$package_name</td>
+        </tr>";
     }
 }
