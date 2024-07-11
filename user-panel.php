@@ -49,7 +49,6 @@ $resultTrainer = mysqli_query($connect, $queryTrainer);
             <div class="col-md-3">
                 <div class="list-group">
                     <a href="" class="list-group-item active" style="background-color:darkgrey;">Personal</a>
-                    <a href="package.php" class="list-group-item">Package</a>
                     <a href="payment.php" class="list-group-item">Payment History</a>
                 </div>
                 <hr>
@@ -106,7 +105,7 @@ $resultTrainer = mysqli_query($connect, $queryTrainer);
                 <nav>
                     <div class="main-wrapper">
                         <div class="nav-login">
-                            <form action="index.php" method="POST">
+                            <form action="logout.php" method="POST">
                                 <button type="submit" name="submit" class="btn">Logout</button>
                             </form>
                         </div>

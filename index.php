@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+session_start();
+?>
 <html lang="en">
 
 <head>
@@ -23,7 +26,16 @@
                     <li><a href="#pricing">Pricing</a></li>
                     <li><a href="#dietplan">Diet Plan</a></li>
                     <!-- <li><a href="#contactUs">Contact us</a></li> -->
-                    <li><a href="login.php" class="hero-btn">Log In</a></li>
+                    <li>
+                        <?php
+                        if (isset($_SESSION['auth']) && $_SESSION['auth']) {
+                            echo '<a href="logout.php" class="hero-btn">Logout</a>';
+                        } else {
+                            echo '<a href="login.php" class="hero-btn">Login</a>';
+                        }
+                        ?>
+
+                    </li>
                 </ul>
             </div>
             <div class="text-box">

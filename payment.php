@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<?php include ("func.php"); ?>
+<?php 
+session_start();
+include("func.php"); ?>
 <html>
 
 <head>
     <title>Members details</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
-        integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 </head>
 
 <body>
@@ -37,31 +38,35 @@
                             <?php get_payment(); ?>
                         </tbody>
                     </table>
-                    <div class="card-body" style="background-color:darkgrey;color:FFFFFF;">
-                        <h3>Make new Payment</h3>
-                    </div>
-                    <div class="card-body">
-                        <form class="form-group" action="func.php" method="post">
-                            <label>Amount</label>
-                            <input type="text" name="Amount" class="form-control"><br>
-                            <label>Customer ID</label>
-                            <input type="text" name="customer_id" class="form-control"><br>
-                            <label>Customer Name</label>
-                            <input type="text" name="customer_name" class="form-control"><br>
-                            <label>Payment Type</label>
-                            <input type="text" name="payment_type" class="form-control"><br>
-                            <input type="submit" class="btn btn-primary" name="pay_submit" value="PAY">
-                        </form>
-                    </div>
+                    <?php
+                    if($_SESSION['type'] == 'admin'){
+                    echo '
+                        <div class="card-body" style="background-color:darkgrey;color:FFFFFF;">
+                            <h3>Make new Payment</h3>
+                        </div>
+                        <div class="card-body">
+                            <form class="form-group" action="func.php" method="post">
+                                <label>Amount</label>
+                                <input type="text" name="Amount" class="form-control"><br>
+                                <label>Customer ID</label>
+                                <input type="text" name="customer_id" class="form-control"><br>
+                                <label>Customer Name</label>
+                                <input type="text" name="customer_name" class="form-control"><br>
+                                <label>Payment Type</label>
+                                <input type="text" name="payment_type" class="form-control"><br>
+                                <input type="submit" class="btn btn-primary" name="pay_submit" value="PAY">
+                            </form>
+                        </div>
+                        ';
+                    }
+                    ?>
                 </div>
             </div>
         </div>
 
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
-            integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
-            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     </div>
 </body>
 

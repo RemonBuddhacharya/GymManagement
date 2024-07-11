@@ -90,7 +90,7 @@ $result1 = mysqli_query($connect, $query);
                 <nav>
                     <div class="main-wrapper">
                         <div class="nav-login">
-                            <form action="index.php" method="POST">
+                            <form action="logout.php" method="POST">
                                 <button type="submit" name="submit" class="btn">Logout</button>
                             </form>
                         </div>

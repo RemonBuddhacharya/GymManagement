@@ -99,6 +99,16 @@ function get_trainer()
 {
     global $con;
     $query = "select * from Trainer";
+    if ($_SESSION['type'] == 'user') {
+        $user = "SELECT trainer_id FROM gymapp WHERE logintb_id = '" . $_SESSION['contact'] . "'";
+        $resultUser = mysqli_query($con, $user);
+        $rowUser = mysqli_fetch_assoc($resultUser);
+        if ($rowUser['trainer_id']) {
+            $query = "select * from Trainer WHERE Trainer_id = '" . $rowUser['trainer_id'] . "'";
+        }else{
+            $query = "select * from Trainer WHERE Trainer_id = '0'";
+        }
+    }
     $result = mysqli_query($con, $query);
     while ($row = mysqli_fetch_array($result)) {
         $Trainer_id = $row['Trainer_id'];
@@ -118,6 +128,12 @@ function get_payment()
 {
     global $con;
     $query = "select * from Payment";
+    if ($_SESSION['type'] == 'user') {
+        $userDetail = "SELECT contact FROM gymapp WHERE logintb_id = '" . $_SESSION['contact'] . "'";
+        $resultUser = mysqli_query($con, $userDetail);
+        $rowUser = mysqli_fetch_assoc($resultUser);
+        $query = "select * from Payment WHERE customer_id = '" . $rowUser['contact'] . "'";
+    }
     $result = mysqli_query($con, $query);
     while ($row = mysqli_fetch_array($result)) {
         $Payment_id = $row['Payment_id'];
