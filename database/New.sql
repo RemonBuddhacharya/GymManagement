@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS `gymapp` (
     `fname` varchar(40) NOT NULL,
     `lname` varchar(40) NOT NULL,
     `email` varchar(40) NOT NULL,
-    `contact` varchar(40) NOT NULL,
+    `contact` int NOT NULL,
     `trainer_id` int NOT NULL,
     `logintb_id` int NULL,
     PRIMARY KEY (`contact`),
@@ -82,57 +82,14 @@ CREATE TABLE IF NOT EXISTS `gymapp` (
     FOREIGN KEY (`logintb_id`) REFERENCES `logintb` (`logintb_id`)
 );
 
--- Dumping data for table gymwebsite.gymapp: ~12 rows (approximately)
-INSERT INTO
-    `gymapp` (
-        `fname`,
-        `lname`,
-        `email`,
-        `contact`,
-        `trainer_id`
-    )
-VALUES (
-        'ram',
-        'thapa',
-        'ramthapa@gamil.com',
-        '103',
-        110
-    ), -- Corrected trainer_id to 110 (assuming it's an existing Trainer_id)
-    (
-        'bhabishya',
-        'thapa',
-        'bhabishyabhattnepal@gmail.com',
-        '109',
-        1001
-    ),
-    (
-        'Saswot',
-        'b',
-        'bs@gmail.com',
-        '110',
-        1001
-    ),
-    (
-        'RAM',
-        'RAM',
-        '1231@GMAIL.COM',
-        '111',
-        1001
-    ),
-    (
-        'Raj',
-        'kumar',
-        'kumar@gmail.com',
-        '201',
-        101
-    ), -- Corrected trainer_id to 101 (assuming it's an existing Trainer_id)
-    (
-        'Aadarsh',
-        'thakur',
-        'thakur@gmail.com',
-        '205',
-        103
-    );
+INSERT INTO `gymapp` (`fname`, `lname`, `email`, `contact`, `trainer_id`, `logintb_id`)
+VALUES 
+    ('ram', 'thapa', 'ramthapa@gamil.com', '103', 110, NULL), -- Corrected trainer_id to 110 (assuming it's an existing Trainer_id)
+    ('bhabishya', 'thapa', 'bhabishyabhattnepal@gmail.com', '109', 1001, NULL),
+    ('Saswot', 'b', 'bs@gmail.com', '110', 1001, NULL),
+    ('RAM', 'RAM', '1231@GMAIL.COM', '111', 1001, NULL),
+    ('Raj', 'kumar', 'kumar@gmail.com', '201', 101, NULL), -- Corrected trainer_id to 101 (assuming it's an existing Trainer_id)
+    ('Aadarsh', 'thakur', 'thakur@gmail.com', '205', 103, 2); -- Removed 'logintb_id' string and added NULL value
 
 -- Dumping data for table gymwebsite.logintb: ~0 rows (approximately)
 
@@ -164,7 +121,7 @@ CREATE TABLE IF NOT EXISTS `payment` (
     `Payment_id` int NOT NULL AUTO_INCREMENT,
     `package_id` varchar(40) NOT NULL,
     `Amount` int NOT NULL,
-    `customer_id` varchar(20) NOT NULL,
+    `customer_id` int NOT NULL,
     `payment_type` varchar(20) NOT NULL,
     PRIMARY KEY (`Payment_id`),
     FOREIGN KEY (`package_id`) REFERENCES `package` (`Package_id`),

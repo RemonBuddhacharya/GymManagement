@@ -26,6 +26,7 @@ if (isset($_POST['submit'])) {
                         header("Location: admin-panel.php");
                     } elseif ($row['type'] == 'user') {
                         $_SESSION['type'] = 'user';
+                        $_SESSION['contact'] = $row['logintb_id'];
                         header("Location: user-panel.php");
                     }
                 } else {

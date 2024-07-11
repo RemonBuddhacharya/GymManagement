@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['auth'])) {
+    header("Location: login.php");
+} else {
+    if ($_SESSION['type'] == 'user') {
+        header("Location: user-panel.php");
+    }
+}
+?>
 <!DOCTYPE html>
 <?php
 
@@ -14,12 +25,14 @@ $result1 = mysqli_query($connect, $query);
 <html>
 
 <head>
+    <title>Admin Panel</title>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 </head>
 
 <body>
     <div class="container-fluid p-0">
-        
+
         <div class="row">
             <div class="col-md-3">
                 <div class="list-group">
@@ -76,25 +89,10 @@ $result1 = mysqli_query($connect, $query);
             <header>
                 <nav>
                     <div class="main-wrapper">
-
                         <div class="nav-login">
-                            <?php
-                            if (isset($_SESSION['u_id'])) {
-                                echo '<form action="includes/index.php" method="POST">
-					            <button type="submit" name="submit">logout</button>
-					              </form>';
-                            } else {
-
-                                echo '<form action="includes/index.php" method="POST">
-                              
-                               						
-				                </form>
-				              <a href="index.php" class="btn btn-light" style="background-color:red;color:white">Logout</a>';
-                            }
-
-                            ?>
-
-
+                            <form action="index.php" method="POST">
+                                <button type="submit" name="submit" class="btn">Logout</button>
+                            </form>
                         </div>
                     </div>
                 </nav>
