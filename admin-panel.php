@@ -18,19 +18,19 @@ $result1 = mysqli_query($connect, $query);
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid p-0">
         
         <div class="row">
             <div class="col-md-3">
                 <div class="list-group">
-                    <a href="" class="list-group-item active">Members</a>
+                    <a href="" class="list-group-item active" style="background-color:darkgrey;">Members</a>
                     <a href="member_details.php" class="list-group-item">Member details</a>
                     <a href="package.php" class="list-group-item">Package details</a>
                     <a href="payment.php" class="list-group-item">Payments</a>
                 </div>
                 <hr>
                 <div class="list-group">
-                    <a href="" class="list-group-item active">Trainer</a>
+                    <a href="" class="list-group-item active" style="background-color:darkgrey;">Trainer</a>
                     <a href="trainer.php" class="list-group-item">Trainer details</a>
                     <a href="trainer_add.php" class="list-group-item">Add new Trainer</a>
                 </div>
@@ -39,35 +39,36 @@ $result1 = mysqli_query($connect, $query);
             <div class="col-md-9">
                 <div class="card">
 
-                    <div class="card-body" style="background-color:#3498DB;color:FFFFFF;">
+                    <div class="card-body" style="background-color:darkgrey;color:FFFFFF;">
                         <h3>Register new members</h3>
                     </div>
-                    <div class="card-body"></div>
-                    <form class="form-group" action="func.php" method="post">
-                        <label>First name:</label>
-                        <input type="text" name="fname" class="form-control"><br>
-                        <label>Last name:</label>
-                        <input type="text" name="lname" class="form-control"><br>
-                        <label>Email</label>
-                        <input type="text" name="email" class="form-control"><br>
-                        <label>Member ID</label>
-                        <input type="text" name="contact" class="form-control"><br>
-                        <label>Trainer </label>
-                        <select class="form-control" name="trainer_id">
+                    <div class="card-body">
+                        <form class="form-group" action="func.php" method="post">
+                            <label>First name:</label>
+                            <input type="text" name="fname" class="form-control"><br>
+                            <label>Last name:</label>
+                            <input type="text" name="lname" class="form-control"><br>
+                            <label>Email</label>
+                            <input type="text" name="email" class="form-control"><br>
+                            <label>Member ID</label>
+                            <input type="text" name="contact" class="form-control"><br>
+                            <label>Trainer </label>
+                            <select class="form-control" name="trainer_id">
 
-                            <?php while ($row1 = mysqli_fetch_array($result1)) :; ?>
+                                <?php while ($row1 = mysqli_fetch_array($result1)) :; ?>
 
-                                <option value="<?php echo $row1[0]; ?>"><?php echo $row1[1]; ?></option>
+                                    <option value="<?php echo $row1[0]; ?>"><?php echo $row1[1]; ?></option>
 
-                            <?php endwhile; ?>
+                                <?php endwhile; ?>
 
-                        </select>
-                        <br>
+                            </select>
+                            <br>
 
-                        <input type="submit" class="btn btn-primary" name="pat_submit" value="Register"> <a href="func.php" class="btn btn-light"></a>
+                            <input type="submit" class="btn btn-primary" name="pat_submit" value="Register"> <a href="func.php" class="btn btn-light"></a>
 
 
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -88,7 +89,7 @@ $result1 = mysqli_query($connect, $query);
                               
                                						
 				                </form>
-				              <a href="index.php" class="btn btn-light" style="background-color:#3498DB;color:FFFFFF">Logout</a>';
+				              <a href="index.php" class="btn btn-light" style="background-color:red;color:white">Logout</a>';
                             }
 
                             ?>

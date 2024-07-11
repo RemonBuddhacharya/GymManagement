@@ -95,7 +95,7 @@ body::-webkit-scrollbar {
 
 .text-box p {
     margin: 10px 0 40px;
-    font-size: 14px;
+    font-size: 20px;
     color: #fff;
 }
 
@@ -105,7 +105,7 @@ body::-webkit-scrollbar {
     color: #fff;
     border: 1px solid #fff;
     padding: 12px 34px;
-    font-size: 13px;
+    font-size: 16px;
     background: transparent;
     position: relative;
     cursor: pointer;
@@ -127,32 +127,32 @@ body::-webkit-scrollbar {
 
 
 p {
-    height: 50px;
-    color: #777;
-    font-size: 14px;
+    height: 100px;
+    color: black;
+    font-size: 16px;
     font-weight: 300;
     line-height: 50px;
     padding: 10px;
 }
 
 .row {
+    display: grid;
     margin-top: 0px;
-    grid-template-columns: 1fr 200px;
+    grid-template-columns: 1fr 700px;
     gap: 50px;
-    display: flex;
-    justify-content: space-between;
+    
 }
 
 
 .about img {
     margin-top: auto;
     margin-bottom: 15%;
+    height: 500px;
+    aspect-ratio: 3/2;
 }
 
 .about-col {
     height: 500px;
-
-    margin: auto;
     background: #fff3f3;
     border-radius: 10px;
     padding: 20px 12px;
@@ -190,6 +190,7 @@ h3 {
 h1 {
     font-size: 40px;
     font-weight: 600;
+    margin-bottom: 30px;
 }
 
 .row-price p {
@@ -341,12 +342,18 @@ h4 {
     justify-content: space-between;
 }
 
+.footer .footer-logo {
+    aspect-ratio: 3/2;
+    width: 400px;  
+}
+
 .footer .contact-column {
     display: flex;
     flex-direction: column;
     width: 250px;
     height: 200px;
     padding: 10px 10px;
+    margin-left: auto;
 }
 
 .footer .contact-column img {
@@ -359,12 +366,15 @@ h4 {
 
 .footer .contact-column li {
     display: flex;
-
     align-items: center;
-
     font-size: large;
     font-weight: bold;
     margin-bottom: 20px;
+}
+
+.footer .contact-column li a{
+    text-decoration: none;
+    color: white;
 }
 
 .footer .menu-column {
@@ -374,6 +384,7 @@ h4 {
     height: fit-content;
     padding: 10px 10px;
 
+    margin-left: 8rem;
     align-items: baseline;
     justify-content: space-between;
 }
@@ -384,13 +395,17 @@ h4 {
     margin-bottom: 20px;
 }
 
+.footer .menu-column li a{
+    text-decoration: none;
+    color: white;
+}
+
 .footer .feedback-column {
     display: flex;
     flex-direction: column;
     width: 45%;
     height: max-content;
     padding: 10px 20px 25px 10px;
-
     justify-content: space-between;
 }
 

@@ -8,9 +8,9 @@
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid p-0">
         <div class="card">
-            <div class="card-body" style="background-color:#3498DB;color:#ffffff;">
+            <div class="card-body" style="background-color:darkgrey;color:#ffffff;">
                 <div class="row">
                     <div class="col-md-2">
                         <a href="admin-panel.php" class="btn btn-light ">Go Back</a>
@@ -20,7 +20,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card-body" style="background-color:#3498DB;color:#ffffff;">
+            <div class="card-body" style="background-color:grey;color:#ffffff;">
                 <div class="card-body">
                     <table class="table table-hover">
                         <thead>
@@ -35,7 +35,7 @@
                             <?php get_payment(); ?>
                         </tbody>
                     </table>
-                    <div class="card-body" style="background-color:#3498DB;color:FFFFFF;">
+                    <div class="card-body" style="background-color:darkgrey;color:FFFFFF;">
                         <h3>Make new Payment</h3>
                     </div>
                     <div class="card-body"></div>

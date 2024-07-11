@@ -1,6 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['userId'])) {
+    $message = $_SESSION['message'];
     header('Location: dashboard.php');
     exit();
 }
@@ -19,7 +20,14 @@ if (isset($_SESSION['userId'])) {
     <div class="container-fluid">
         <div class="center">
             <h1>Log In</h1>
-            <form action="admin-panel.php" method="POST">
+            <?php
+                if (isset($_SESSION['message'])) {
+                    $message = $_SESSION['message'];
+                    echo "<p style='color:red;font-size:26px;text-align:center;'>$message</p>";
+                    unset($_SESSION['message']);
+                }
+            ?>
+            <form action="registration.php" method="POST">
                 <div class="txt_field">
                     <input type="text" name="username" placeholder="Username" required>
                 </div>

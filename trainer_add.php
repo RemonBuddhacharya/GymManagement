@@ -8,9 +8,9 @@
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid p-0">
         <div class="card">
-            <div class="card-body" style="background-color:#3498DB;color:#ffffff;">
+            <div class="card-body" style="background-color:darkgrey;color:#ffffff;">
                 <div class="row">
                     <div class="col-md-2">
                         <a href="admin-panel.php" class="btn btn-light ">Go Back</a>
@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="card-body" style="background-color:#3498DB;color:#ffffff;">
+                    <div class="card-body" style="background-color:grey;color:#ffffff;">
                         <form class="form-group" action="func.php" method="post">
                             <label>Trainer ID</label>
                             <input type="text" name="Trainer_id" class="form-control"><br>

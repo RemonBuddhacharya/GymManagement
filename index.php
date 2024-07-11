@@ -16,19 +16,19 @@
     <section>
         <div class="banner">
             <div class="navbar">
-                <img src="images/logo/newlogo.png" class="logo" alt="logo">
+                <img src="images/logo/FITHUB IMG.PNG" class="logo" alt="logo">
                 <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="#aboutus">About</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="about.php">About</a></li>
                     <li><a href="#pricing">Pricing</a></li>
                     <li><a href="#dietplan">Diet Plan</a></li>
-                    <li><a href="#contactUs">Contact us</a></li>
+                    <!-- <li><a href="#contactUs">Contact us</a></li> -->
                     <li><a href="login.php" class="hero-btn">Log In</a></li>
                 </ul>
             </div>
             <div class="text-box">
                 <h1>Welcome to Gym Website</h1>
-                <p>A complete Gym Solution</p>
+                <p>A Complete Gym Solution</p>
                 <a href="#aboutus" class="hero-btn">Visit us to know more</a>
             </div>
         </div>
@@ -39,12 +39,12 @@
         <h1>About Us</h1>
         <p>Welcome to Gym website</p>
         <div class="row">
-            <div class="about">
-                <img src="images/index/about.png" height="500" alt="about">
+            <div class="about-img">
+                <img src="images/index/about.png" alt="about">
             </div>
             <div class="about-col">
                 <h3>Introduction</h3>
-                <p>Welcome to the gym, your one-stop destination for fitness! With a range of equipment, classes, and supportive community vibes, you'll find everything you need to kickstart your health journey.</p>
+                <p>Nepal’s Best Gym – Fithub was voted Best Gym in Nepal, 3 years in a row! We are a friendly and inclusive-focused gym offering a range of Classes, Free Weights, Machines, Free Towels, Free Parking, Hot Tubs, Steam-Rooms, Saunas and Court Sports (basketball, pickleball, wallyball, handball, racquetball & squash)! We are a locally owned fitness & wellness facility geared for all types of people regardless of gender, size, age or ability. Most of all, we’re a fun, clean and welcoming family of employees & members.</p>
             </div>
         </div>
     </section>
@@ -114,12 +114,15 @@
     <!----- Call to action ----->
     <section class="cta">
         <h1>Enroll for our various online classes <br>Anywhere from the world</h1>
-        <a href="#contactUs" class="hero-btn">CONTACT US</a>
+        <a href="about.php" class="hero-btn">ABOUT US</a>
     </section>
 
 
     <!----- footer----->
     <div class="footer">
+        <div class="logo-column">
+            <img src="./images/logo/FITHUB IMG.PNG" alt="" class="footer-logo">
+        </div>
         <div class="contact-column">
             <h1 style="color:white;" id="contactUs">Contact</h1><br>
             <ul>
@@ -135,11 +138,11 @@
 
             </ul>
         </div>
-        <div class="feedback-column">
+        <!-- <div class="feedback-column">
             <h1 style="color:white;">Feedback</h1><br>
             <textarea name="feedback" id="feedback-area" placeholder="What's on your mind?" cols="100%" rows="4" style="border-radius: 5px;"></textarea>
             <button id="feedback-btn">Send</button>
-        </div>
+        </div> -->
     </div>
     <script src="scripts/pop.js"></script>
 </body>

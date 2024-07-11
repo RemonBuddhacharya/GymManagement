@@ -1,0 +1,19 @@
+.aboutus {
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.aboutus h1 {
+    font-size: 62px;
+}
+
+.aboutus p {
+    margin: 10px 0 40px;
+    font-size: 24px;
+    color: #fff;
+}

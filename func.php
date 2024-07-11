@@ -65,6 +65,10 @@ function get_member_details()
             <td>$email</td>
             <td>$contact</td>
           <td>$trainer_id</td>
+          <td>
+            <a class='btn btn-success mx-3 editbtn' style='text-decoration:none; color:white;'>Edit</a>
+            <a href='memberdelete.php?email=$email'  class='btn btn-danger' style='text-decoration:none; color:white;'>Delete</a>
+          </td>
         </tr>";
     }
 }
@@ -97,6 +101,9 @@ function get_trainer()
         <td>$Trainer_id</td>
         <td>$Name</td>
             <td>$phone</td>
+            <td>
+                <a href='trainerdelete.php?Trainer_id=$Trainer_id'  class='btn btn-danger' style='text-decoration:none; color:white;'>Delete</a>
+            </td>
         </tr>";
     }
 }
